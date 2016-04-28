@@ -9,7 +9,7 @@ function getWebSocketWindow(user) {
 	Ext.onReady(function() {//下面就是页面加载完成后开始执行的代码,对这行代码的说明：之所以将该行代码放在这里，是因为为了使“当前浏览器不支持HTML5 WebSocket！！！”会话框好使。
 		if (window.WebSocket) {
 			var initWebSocket = function () {//初始话WebSocket
-				websocket = new WebSocket(encodeURI('ws://192.168.1.112:8080/WebSocket/sendMessage'));
+				websocket = new WebSocket(encodeURI('ws://192.168.1.105:8080/WebSocket/sendMessage'));
 				websocket.onopen = function() {//连接成功
 					webSocketWindow.setTitle(title + '&nbsp;&nbsp;(已连接)');
 				}
@@ -87,6 +87,7 @@ function getWebSocketWindow(user) {
 			};
 			
 			var closeWebSocketWindow = function () {
+				websocket.close();
 				webSocketWindow.close();
 			};
 			
@@ -242,9 +243,9 @@ function getWebSocketWindow(user) {
 				items : [ dialog, onlineUser ],
 				border : false,
 				listeners : {
-//					beforeClose: function () {                          
-//					    return confirm("确认关闭吗?");                
-//					},
+					beforeClose: function () {                          
+					    websocket.close();              
+					},
 					render :initWebSocket
 				}
 			});
