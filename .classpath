@@ -15,6 +15,6 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/tomcat-coyote.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/tomact7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/tomcat7.9"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
